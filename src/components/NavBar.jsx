@@ -1,11 +1,13 @@
 import React from 'react';
 import './styles/NavBar.css';
+import brand from '../imagen/Supreme_Logo.svg'
+
 
 const NavBar = () => {
   
-  const brand =
-    'https://upload.wikimedia.org/wikipedia/commons/2/28/Supreme_Logo.svg';
-
+  //const brand =
+    //'https://upload.wikimedia.org/wikipedia/commons/2/28/Supreme_Logo.svg';
+ 
   return (
     <header className="header">
       {/* logo de la marca */}
