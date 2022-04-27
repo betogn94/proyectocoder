@@ -1,18 +1,16 @@
 import React from 'react';
 import './styles/NavBar.css';
-import './imagen/5a7f5f47abc3d121aba71181.png';
 
 const NavBar = () => {
-
   
-  //const brand =
-    //'https://f.hubspotusercontent10.net/hub/20044066/hubfs/raw_assets/public/kong/images/logo.png?width=190&name=logo.png';
-  //la lógica va siempre antes del return
+  const brand =
+    'https://upload.wikimedia.org/wikipedia/commons/2/28/Supreme_Logo.svg';
+
   return (
     <header className="header">
       {/* logo de la marca */}
       <div className="logo-container">
-        <img src= "./imagen/5a7f5f47abc3d121aba71181.png" alt="logo" />
+        <img src={brand} alt="logo" />
       </div>
 
       {/* links de navegación */}
