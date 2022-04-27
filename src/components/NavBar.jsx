@@ -9,39 +9,21 @@ const NavBar = () => {
     //'https://upload.wikimedia.org/wikipedia/commons/2/28/Supreme_Logo.svg';
  
   return (
-    <header className="header">
-      {/* logo de la marca */}
-      <div className="logo-container">
-        <img src={brand} alt="logo" />
+    <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+  <div className='container-fluid'>
+    <img src={ brand } alt="logo" width='100' />
+    <button className='navbar-toggler' type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span className='navbar-toggler-icon'></span>
+    </button>
+    <div className='collapse navbar-collapse' id="navbarNavAltMarkup">
+      <div className='navbar-nav mx-auto'>
+        <a className='nav-link active' aria-current="page" href="/">Home</a>
+        <a className='nav-link' href="/">Streetwear</a>
+        <a className='nav-link' href="/">About Us</a>
       </div>
-
-      {/* links de navegación */}
-      <nav>
-        <ul className="nav-container">
-          <li>
-            <a href="/">Inicio</a>
-          </li>
-          <li>
-            <a href="/">Productos</a>
-          </li>
-          <li>
-            <a href="/">Blog</a>
-          </li>
-          <li>
-            <a href="/">Contacto</a>
-          </li>
-        </ul>
-      </nav>
-
-      {/* selector de lenguaje */}
-      <select className="select-language">
-        <option value="" selected disabled>
-          Language
-        </option>
-        <option value="">Español</option>
-        <option value="">日本語</option>
-      </select>
-    </header>
+    </div>
+  </div>
+</nav>
   );
 };
 

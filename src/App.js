@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './components/NavBar.jsx';
 
-import './styles.css';
+import './style.css';
 
 export default function App() {
   return (
