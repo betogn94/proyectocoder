@@ -1,0 +1,11 @@
+.cart-widget {
+    display: flex;
+    margin-right:2.8rem;
+    position:relative;
+    cursor: pointer;
+    text-align: center;
+    opacity: 0.7;
+  }
+
+  
+  

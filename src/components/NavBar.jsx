@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/NavBar.css';
 import brand from '../imagen/Supreme_Logo.svg'
+import CartWidget from './CartWidget';
 
 
 const NavBar = () => {
@@ -11,7 +12,9 @@ const NavBar = () => {
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
   <div className='container-fluid'>
-    <img src={ brand } alt="logo" width='100' />
+    <a className='logotype' href='/'>
+      <img src={ brand } alt="logo" width='100' />
+    </a>
     <button className='navbar-toggler' type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span className='navbar-toggler-icon'></span>
     </button>
@@ -23,6 +26,9 @@ const NavBar = () => {
       </div>
     </div>
   </div>
+
+    <CartWidget />
+
 </nav>
   );
 };
