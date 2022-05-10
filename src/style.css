@@ -1,3 +1,14 @@
+:root {
+  /*fonts*/
+  --catamaran-font: 'Catamaran', sans-serif;
+  --mulish-font: 'Mulish', sans-serif;
+  /*colors*/
+  --primary-color: #EC2719;
+  --body-bg-color: #1d1d1d;
+  --border-color: #737373;
+  --just-white: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,5 +17,27 @@
 
 html,
 body {
-  font-family: 'Mulish', sans-serif;
+  font-family: var(--mulish-font);
+}
+
+body {
+  background-color: var(--just-white);
+  color: var(--body-bg-color);
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  border: none;
+  font-family: var(--mulish-font);
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 20px auto;
+  width: 112px;
+  height: 36px;
+  cursor: pointer;
 }
