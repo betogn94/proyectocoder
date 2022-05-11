@@ -3,7 +3,7 @@ export const productos = [
         name: 'Supreme Hoodie Black',
         price: 200,
         thumbnail:
-            'https://assets.supremenewyork.com/229589/ma/9l6t1DknhK0.jpg',
+            'https://assets.supremenewyork.com/229568/ma/F2BQr0KFGaQ.jpg',
         description:'Hoodie Algodon marca Supreme',    
         stock: 10,
         id: 1,    
