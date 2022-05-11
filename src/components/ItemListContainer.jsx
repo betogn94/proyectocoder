@@ -1,17 +1,34 @@
-import React from 'react';
-import ItemList from './ItemList';
-import './styles/ItemListContainer.css'
+import React from "react";
+import { useEffect, useState } from "react";
+import { productos } from "./data/data";
+import ItemList from './ItemList.jsx';
+import './styles/ItemListContainer.css';
 
-const ItemListContainer = () => {
+const items = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(productos);
+    }, 2000);
+  });
+
+  function ItemListContainer() {
+
+    const [productos, setProductos] = useState([]);
+    const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+      items
+        .then(resp => {setProductos(resp);
+        })
+        .finally(() => setLoading(false));
+    }, []);
+
     return (
       <section className="item-list-container">
-        <div className='titulo-container'>
-          <h2 className="item-list-container__title">Productos</h2>
+        <div>
+            {loading ? (<h2>Cargando...</h2>) : (<ItemList productos={productos}/>)}
         </div>
-        <ItemList />
-      </section>
-    );
-  };
-
-export default ItemListContainer;
-    
+      </section>  
+    )
+}
+  
+  export default ItemListContainer;
