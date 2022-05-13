@@ -33,6 +33,7 @@ button {
 .button-primary {
   background-color: var(--primary-color);
   border: none;
+  border-radius: 12px;
   font-family: var(--mulish-font);
   font-weight: 700;
   font-size: 1rem;
@@ -41,3 +42,11 @@ button {
   height: 36px;
   cursor: pointer;
 }
+
+.button-primary:hover {
+  border: none;
+    color: var(--just-white);
+    background-color: var(--border-color);
+}
+
+

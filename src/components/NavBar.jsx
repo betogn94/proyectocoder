@@ -22,7 +22,7 @@ const NavBar = () => {
       <div className='navbar-nav mx-auto'>
         <a className='nav-link active' aria-current="page" href="/">Home</a>
         <a className='nav-link' href="/">Streetwear</a>
-        <a className='nav-link' href="/">About Us</a>
+        <a className='nav-link' href="/">Skate</a>
       </div>
     </div>
   </div>

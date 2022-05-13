@@ -1,5 +1,5 @@
 .product-card {
-    height: 580px;
+    height: 630px;
     min-width: 250px;
     max-width: 320px;
     text-align: center;
@@ -18,5 +18,9 @@
   .product-card__name {
     margin-top: 1.5rem;
     font-size: 1.5rem;
+    color: aliceblue;
+  }
+
+  .bu {
     color: aliceblue;
   }

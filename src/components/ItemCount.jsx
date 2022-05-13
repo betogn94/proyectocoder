@@ -13,6 +13,8 @@ const ItemCount = ({ onAdd }) => {
     setCant(cant + num);
   };
 
+  
+
   return (
     <div className="count-container">
       <div className="count-container__contador">
@@ -33,14 +35,19 @@ const ItemCount = ({ onAdd }) => {
         </button>
       </div>
 
+     
       <button
         className="button-primary"
         onClick={() => onAdd(cant)}
         disabled={stock === 0 ? true : null}
       >
-        Añadir
+        Add to Cart
       </button>
-    </div>
+
+      
+
+    </div> 
+    
   );
 };
 
