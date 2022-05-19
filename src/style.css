@@ -21,8 +21,8 @@ body {
 }
 
 body {
-  background-color: var(--just-white);
-  color: var(--body-bg-color);
+  background-color: var(--body-bg-color);
+  background-image: url ('https://previews.123rf.com/images/cnuisin/cnuisin2001/cnuisin200100371/138533353-skateboard-seamless-pattern-skating-vector-extreme-sport-cartoon-scarf-isolated-repeat-wallpaper-til.jpg?fj=1');
 }
 
 button {

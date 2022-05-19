@@ -2,6 +2,7 @@ import React from "react";
 import ItemCount from "./ItemCount";
 import './styles/ItemDetail.css'
 
+
 const ItemDetail = ({item}) => {
     const onAdd = (cant) => {
         alert(`Agregaste ${cant} productos`);

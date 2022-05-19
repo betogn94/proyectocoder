@@ -1,34 +1,40 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { productos } from "./data/data";
 import ItemList from './ItemList.jsx';
 import './styles/ItemListContainer.css';
+import { getData } from "./data/getData.js";
+import { useParams } from "react-router-dom";
 
-const items = new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(productos);
-    }, 2000);
-  });
 
-  function ItemListContainer() {
+const ItemListContainer = () => {
+  const [productos, setProductos] = useState ([])
+  const [loading, setLoading] = useState (true)
 
-    const [productos, setProductos] = useState([]);
-    const [loading, setLoading] = useState(true);
-  
-    useEffect(() => {
-      items
-        .then(resp => {setProductos(resp);
-        })
-        .finally(() => setLoading(false));
-    }, []);
+  const {id} = useParams()
 
-    return (
-      <section className="item-list-container">
-        <div>
-            {loading ? (<h2>Cargando...</h2>) : (<ItemList productos={productos}/>)}
-        </div>
-      </section>  
-    )
+  useEffect(()=>{
+    if (id){
+      getData()
+      .then(respuesta=> setProductos(respuesta.filter((prods) => prods.categories === id)))
+      .finally(()=>setLoading(false))
+    } else {
+      getData()
+      .then(respuesta=> setProductos(respuesta))
+      .finally(()=>setLoading(false))
+    }
+  }, [id] )
+
+  return (
+    <section className="item-list-container">
+      <div>
+          {loading ? (<h2>Cargando...</h2>) : (<ItemList productos={productos}/>)}
+      </div>
+    </section>  
+  )
+
 }
-  
-  export default ItemListContainer;
+    
+
+      
+
+export default ItemListContainer;

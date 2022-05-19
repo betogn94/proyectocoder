@@ -3,16 +3,27 @@ import ItemListContainer from './components/ItemListContainer.jsx';
 import NavBar from './components/NavBar.jsx';
 import './style.css';
 import ItemDetailContainer from './components/ItemDetailContainer.jsx';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Cart from './components/Cart';
 
 
 export default function App() {
   return (
     
-      <>
+      <BrowserRouter>
+
         <NavBar />  
-        <ItemListContainer />
-        <ItemDetailContainer id={5} />
-      </>
+        <Routes>
+          <Route path='/' element= {<ItemListContainer />}/>
+          <Route path='/categories/:id' element= {<ItemListContainer />}/>
+          <Route path='/detail/:detalleId' element= {<ItemDetailContainer/>} /> 
+          <Route path="/cart" element = { <Cart /> } />
+
+          <Route path='/*' element= {<Navigate to='/' replace/>} />
+
+        </Routes>
+
+      </BrowserRouter>
     
   );
 };

@@ -1,32 +1,34 @@
 import React from "react";
-import { productos } from "./data/data";
 import ItemCount from "./ItemCount";
 import './styles/Item.css';
+import { Link } from "react-router-dom";
 
 
-const Item = ({ name,thumbnail, price, id, stock }) => {
+const Item = ({prod}) => {
+    //console.log(prod)
     const onAdd = (cant) => {
         alert(`Agregaste ${ cant } productos`);
     };
 
-    let prod = productos;
-    function detail(prod) {
-        console.log(prod)
-    }
+    return(
+        <div className="catalogo">
+            <article className="product-card">
 
+            
+                <img className="product-card__image" src={prod.thumbnail} alt="" />
+                <h3 className="product-card__name">{prod.name}</h3>
+                <span className="product-card__name">${prod.price}</span>
+                <ItemCount stock={prod.stock} onAdd={onAdd} initial={1} />
+            <Link to= {`/detail/${prod.id}`}>    
+                <button className="bu">Details</button>
+            </Link>
+
+            </article>
+        </div>
+    )
+}
     
 
-    return(
-        <article className="product-card">
-            
-            <img className="product-card__image" src={thumbnail} alt="" />
-            <h3 className="product-card__name">{name}</h3>
-            <span className="product-card__name">${price}</span>
-            <ItemCount stock={stock} onAdd={onAdd} initial={1} />
-            <button className="bu" onClick={(() => detail(prod))}>Details</button>
-           
-        </article>
-    )
-};
+    
 
 export default Item;
