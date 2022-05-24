@@ -1,12 +1,14 @@
 import React from "react";
-import ItemCount from "./ItemCount";
-import './styles/ItemDetail.css'
+//import ItemCount from "./ItemCount";
+import './styles/ItemDetail.css';
+import Intercambiar from "./Intercambiar"
 
 
 const ItemDetail = ({item}) => {
-    const onAdd = (cant) => {
-        alert(`Agregaste ${cant} productos`);
-    };
+    //const onAdd = (cant) => {
+        //alert(`Agregaste ${cant} productos`);
+        
+    //};
 
     console.log(item);
 
@@ -18,7 +20,8 @@ const ItemDetail = ({item}) => {
                 <h2 className="name">{item.name}</h2>
                 <p className="description">{item.description}</p>
                 <h4 className="price">${item.price}</h4>
-                <ItemCount stock={item.stock} onAdd={onAdd} initial={1} />
+                {/*<ItemCount stock={item.stock} onAdd={onAdd} initial={1} /> */}
+                <Intercambiar>{item}</Intercambiar>
             </div>
         </div>
     );

@@ -1,24 +1,3 @@
-//import { productos } from "./data";
-
-/*const getById = (id, array) => array.find((el) => el.id ===id);
-
-const getProducts = new Promise((resolve, reject) =>{
-    setTimeout(() => {
-        resolve(productos);
-    }, 2000);
-});
-
-const getProductById = async (id, setState) => {
-    try {
-        const result = await getProducts;
-        setState(getById(id,result));
-    }   catch(error) {
-        console.log(error);
-    }
-};
-
-export {getProductById}; */
-
 const productos = [
     {
         name: 'Supreme Hoodie Black',
@@ -27,7 +6,7 @@ const productos = [
         thumbnail:
             'https://assets.supremenewyork.com/229568/ma/F2BQr0KFGaQ.jpg',
         description:'Brushed-back fleece with rib gussets and pouch pocket. Tackle twill logo applique with metal studs at chest',    
-        stock: 10,
+        stock: 5,
         id: '1',    
     },
     {
@@ -47,7 +26,7 @@ const productos = [
         thumbnail:
             'https://assets.supremenewyork.com/228787/ma/poQfRxWgJ_c.jpg',
         description:'All cotton crewneck with printed graphic. High density silicone printed logos on front. Made exclusively for Supreme.',  
-        stock: 12,
+        stock: 5,
         id: '3',
     },
     {
@@ -67,7 +46,7 @@ const productos = [
         thumbnail:
             'https://assets.supremenewyork.com/231605/ma/CpPmzuW6nU4.jpg',
         description:'Skate Pro color Gold with natural veneer and black top ply. Printed logo on bottom with printed World Famous and box logo on top',  
-        stock: 3,
+        stock: 5,
         id: '5',
     },
     {
@@ -77,7 +56,7 @@ const productos = [
         thumbnail:
             'https://assets.supremenewyork.com/231455/ma/lSjAGZIHXnE.jpg',
         description:'Skate Wheels with custom Supreme art. Each size sold separetely as a set of four wheels. Made exclusesively for Supreme.',  
-        stock: 20,
+        stock: 5,
         id: '6',
     },
 ];

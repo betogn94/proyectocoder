@@ -2,53 +2,42 @@ import React from 'react';
 import { useState } from 'react';
 import './styles/ItemCount.css';
 
-const ItemCount = ({ onAdd }) => {
-  const initial = 1;
-  const stock = 5; 
+function ItemCount({prod, countModified}) {
+  const [count, setCount] = useState(parseFloat(1));
+  //console.log(item);
 
-  const [cant, setCant] = useState(initial);
+  //sumar
+  function sumar() {
+    if(count < prod.stock){
+      setCount(count+1);
+    }
+  }
 
-  
-  const addProduct = (num) => {
-    setCant(cant + num);
-  };
+  //restar
+  function restar() {
+    if(count <= prod.stock && count >1) {
+      setCount(count-1);
+    }
+  }
 
-  
+  //Add to cart
+  function onAdd() {
+    alert(`Agregaste ${count} productos`)
+    countModified();
+  }
 
   return (
     <div className="count-container">
       <div className="count-container__contador">
-        <button
-          className="count-container__button"
-          onClick={() => addProduct(-1)}
-          disabled={cant === initial ? true : null}
-        >
-          -
-        </button>
-        <span className="count-container__qty">{cant}</span>
-        <button
-          className="count-container__button"
-          onClick={() => addProduct(+1)}
-          disabled={cant === stock ? true : null}
-        >
-          +
-        </button>
+          <button className='count-container__button' onClick={restar}>-</button>
+          <span className="count-container__qty">{count}</span>
+          <button className='count-container__button' onClick={sumar}>+</button>
       </div>
+        <button className="button-primary" onClick={onAdd}>Add to cart</button>
+    </div>
+  )
+} 
 
-     
-      <button
-        className="button-primary"
-        onClick={() => onAdd(cant)}
-        disabled={stock === 0 ? true : null}
-      >
-        Add to Cart
-      </button>
 
-      
-
-    </div> 
-    
-  );
-};
 
 export default ItemCount;
