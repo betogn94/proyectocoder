@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
     
     return (
         <section className="item-d-container">
-            {producto ? <ItemDetail prod={producto} /> : loading (<p>Cargando Detalles...</p>)}
+            {loading ? <h3>Cargando Detalles...</h3> : <ItemDetail prod={producto} /> }
         </section>
     )
 };
