@@ -173,6 +173,7 @@ padding: 0.5em;
 }
 
 .cartInfo form input {
+    color: #fff;
     width: 90%;
     border-style: none;
     border-bottom: 1px gray solid;
