@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function InputCount () {
+export const BuyButton =() => {
     return( 
         <>
             <Link to ="/">
@@ -14,4 +14,3 @@ function InputCount () {
     )
 };
 
-export default InputCount;

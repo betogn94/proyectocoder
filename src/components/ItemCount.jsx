@@ -2,28 +2,28 @@ import React from 'react';
 import { useState } from 'react';
 import './styles/ItemCount.css';
 
-function ItemCount({prod, countModified}) {
-  const [count, setCount] = useState(parseFloat(1));
+function ItemCount({stock, initial, onAdd, handleInputType}) {
+  const [count, setCount] = useState(initial);
   //console.log(item);
 
   //sumar
   function sumar() {
-    if(count < prod.stock){
+    if(count < stock){
       setCount(count+1);
     }
   }
 
   //restar
   function restar() {
-    if(count <= prod.stock && count >1) {
+    if(count > initial) {
       setCount(count-1);
     }
   }
 
   //Add to cart
-  function onAdd() {
-    alert(`Agregaste ${count} productos`)
-    countModified();
+  function addToCart() {
+    onAdd(count);
+    handleInputType();
   }
 
   return (
@@ -33,7 +33,7 @@ function ItemCount({prod, countModified}) {
           <span className="count-container__qty">{count}</span>
           <button className='count-container__button' onClick={sumar}>+</button>
       </div>
-        <button className="button-primary" onClick={onAdd}>Add to cart</button>
+        <button className="button-primary" onClick={addToCart}>Add to cart</button>
     </div>
   )
 } 

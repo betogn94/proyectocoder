@@ -1,27 +1,40 @@
 import React from "react";
-//import ItemCount from "./ItemCount";
+import ItemCount from "./ItemCount";
 import './styles/ItemDetail.css';
-import Intercambiar from "./Intercambiar"
+import { useState } from "react";
+import {BuyButton} from './BuyButton';
+import {useCartContext} from '../Context/CartContext';
 
 
-const ItemDetail = ({item}) => {
-    //const onAdd = (cant) => {
-        //alert(`Agregaste ${cant} productos`);
+
+const ItemDetail = ({prod}) => {
+    const [inputType, setInputType] = useState('itemCount');
+    const {addToCart} = useCartContext()
+
+    function handleInputType() {
+        setInputType('buyButtons')
+    }
+
+    const onAdd = (count) => {
+        addToCart({...prod, count})
+    }
         
-    //};
+    
 
-    console.log(item);
+    console.log(prod);
 
     return (
         
         <div className="producto-detail">
-            <img src={ item.thumbnail } alt="Thumbnail" className="producto-detail-thumb"/>
+            <img src={ prod.thumbnail } alt="Thumbnail" className="producto-detail-thumb"/>
             <div className="producto-detail-info">
-                <h2 className="name">{item.name}</h2>
-                <p className="description">{item.description}</p>
-                <h4 className="price">${item.price}</h4>
-                {/*<ItemCount stock={item.stock} onAdd={onAdd} initial={1} /> */}
-                <Intercambiar>{item}</Intercambiar>
+                <h2 className="name">{prod.name}</h2>
+                <p className="description">{prod.description}</p>
+                <h4 className="price">${prod.price}</h4>
+                {inputType === 'itemCount' ?
+                    <ItemCount stock={prod.stock} onAdd={onAdd} initial={1} handleInputType={handleInputType}/> :
+                    <BuyButton />
+                }   
             </div>
         </div>
     );

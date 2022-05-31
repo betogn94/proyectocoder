@@ -7,6 +7,7 @@ import { getData } from './data/getData'
 
 
 const ItemDetailContainer = () => {
+    const [loading, setLoading] = useState(true)
     const [producto, setProducto] = useState({})
     const { detalleId } = useParams()
 
@@ -14,7 +15,7 @@ const ItemDetailContainer = () => {
         getData(detalleId)  // fetch llamada a una api  
         .then(respuesta=> setProducto(respuesta))
         .catch((err)=> console.log(err))
-        // .finally(()=>setLoading(false))    
+        .finally(()=>setLoading(false))    
         // eslint-disable-next-line react-hooks/exhaustive-deps 
     }, [])
 
@@ -23,7 +24,7 @@ const ItemDetailContainer = () => {
     
     return (
         <section className="item-d-container">
-            {producto ? <ItemDetail item={producto} /> : <p>Cargando Detalles...</p>}
+            {producto ? <ItemDetail prod={producto} /> : loading (<p>Cargando Detalles...</p>)}
         </section>
     )
 };
