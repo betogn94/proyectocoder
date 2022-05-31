@@ -21,7 +21,7 @@ export const Cart = ({prod}) => {
             </Link>
             <p>{prod.name}</p>
             <p>Price: ${prod.price}</p>
-            <p>Items: {prod.stock}</p>
+            <p>Items: {prod.count}</p>
 
             <button onClick={()=>deleteItem(prod.id)} className="delete-item">X</button>
           </li>)}
