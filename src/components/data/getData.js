@@ -6,7 +6,7 @@ const productos = [
         thumbnail:
             'https://assets.supremenewyork.com/229568/ma/F2BQr0KFGaQ.jpg',
         description:'Brushed-back fleece with rib gussets and pouch pocket. Tackle twill logo applique with metal studs at chest',    
-        stock: 5,
+        stock: 50,
         id: '1',    
     },
     {
@@ -16,7 +16,7 @@ const productos = [
         thumbnail:
             'https://assets.supremenewyork.com/229576/ma/1yoqeTcrbp4.jpg',
         description:'Brushed-back fleece with rib gussets and pouch pocket. Tackle twill logo applique with metal studs at chest',    
-        stock: 5,
+        stock: 50,
         id: '2',
     },
     {
@@ -26,7 +26,7 @@ const productos = [
         thumbnail:
             'https://assets.supremenewyork.com/228787/ma/poQfRxWgJ_c.jpg',
         description:'All cotton crewneck with printed graphic. High density silicone printed logos on front. Made exclusively for Supreme.',  
-        stock: 5,
+        stock: 50,
         id: '3',
     },
     {
@@ -36,7 +36,7 @@ const productos = [
         thumbnail:
             'https://assets.supremenewyork.com/231604/ma/ykhaaJQBPEE.jpg',
         description:'Skate Pro color Plat with natural veneer and black top ply. Printed logo on bottom with printed World Famous and box logo on top',  
-        stock: 5,
+        stock: 100,
         id: '4',
     },
     {
@@ -46,7 +46,7 @@ const productos = [
         thumbnail:
             'https://assets.supremenewyork.com/231605/ma/CpPmzuW6nU4.jpg',
         description:'Skate Pro color Gold with natural veneer and black top ply. Printed logo on bottom with printed World Famous and box logo on top',  
-        stock: 5,
+        stock: 20,
         id: '5',
     },
     {
@@ -56,7 +56,7 @@ const productos = [
         thumbnail:
             'https://assets.supremenewyork.com/231455/ma/lSjAGZIHXnE.jpg',
         description:'Skate Wheels with custom Supreme art. Each size sold separetely as a set of four wheels. Made exclusesively for Supreme.',  
-        stock: 5,
+        stock: 100,
         id: '6',
     },
 ];
