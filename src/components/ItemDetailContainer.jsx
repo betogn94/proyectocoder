@@ -15,11 +15,12 @@ const ItemDetailContainer = () => {
 
 useEffect (() => {
     const db = getFirestore()
-    const dbQuery = doc(db, 'products', '3j94dUFiXLDLU4pJx3hK')
+    const dbQuery = doc(db, 'products', detalleId)
     getDoc(dbQuery)
     .then(resp => setProducto( { id: resp.id, ...resp.data() } ))
     .catch((err)=> console.log(err))
     .finally(()=>setLoading(false)) 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
 
 
