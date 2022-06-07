@@ -4,7 +4,7 @@ import ItemList from './ItemList.jsx';
 import './styles/ItemListContainer.css';
 //import { getData } from "./data/getData.js";
 import { useParams } from "react-router-dom";
-import {getFirestore, getDocs, collection, query, where, limit} from 'firebase/firestore'
+import {getFirestore, getDocs, collection, query, where} from 'firebase/firestore'
 
 
 const ItemListContainer = () => {
@@ -15,13 +15,20 @@ const ItemListContainer = () => {
 
   useEffect(()=>{
     const db = getFirestore()
-
-    const queryCollection = collection(db, 'products')
-    const queryCollectionFilter = id ? query(queryCollection, where('categories', '==', id),limit(1)) : queryCollection
-    getDocs(queryCollectionFilter)
-    .then(resp => setProductos( resp.docs.map(item => ( { id: item.id, ...item.data() } ) ) ) )
-    .catch((err)=> console.log(err))
-    .finally(()=>setLoading(false))
+      if (id){
+        const queryCollection = collection(db, 'products')
+        const queryCollectionFilter = query(queryCollection, where('categories', '==', id))
+        getDocs(queryCollectionFilter)
+        .then(resp => setProductos( resp.docs.map(item => ( { id: item.id, ...item.data() } ) ) ) )
+        .catch((err)=> console.log(err))
+        .finally(()=>setLoading(false))
+      } else {
+          const queryCollection = collection(db, 'products')
+          getDocs(queryCollection)
+          .then(resp => setProductos( resp.docs.map(item => ( { id: item.id, ...item.data() } ) ) ) )
+          .catch((err)=> console.log(err))
+          .finally(()=>setLoading(false))
+      }
  }, [id])
 
   //useEffect(()=>{
